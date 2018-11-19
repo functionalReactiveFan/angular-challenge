@@ -2,6 +2,10 @@ input.ng-invalid {
     border: 1px solid red;
 }
 
+input, select {
+    display: block;
+}
+
 .error-warning {
     color: red;
 }
