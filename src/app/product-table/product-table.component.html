@@ -1,0 +1,30 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<div class="table-container" *ngIf="products.length">
+  <table class="table">
+    <tr sticky>
+      <th>PlistaProduct</th>
+      <th>Camp CPC</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>FreeClick?</th>
+      <th>FriendDomainId</th>
+      <th>CampaignId</th>
+      <th>Network</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let product of products" class="product-row" (click)="selectProduct(product.userid)">
+      <td>{{product.PlistaProduct}}</td>
+      <td>{{product.camp_cpc | currency: 'EUR': 'symbol'}}</td>
+      <td>{{product.a}}</td>
+      <td>{{product.date | date: 'dd.MM.yyyy - HH:mm'}}</td>
+      <td>{{product.freeclick}}</td>
+      <td>{{product.frienddomainid | slice:0:6}}</td>
+      <td>{{product.campaignid | slice:0:6}}</td>
+      <td>{{product.network}}</td>
+      <td><a routerLink="/products/{{product.userid}}">Edit product</a></td>
+    </tr>
+  </table>
+  <div *ngIf="hasMoreProducts" class="load-more">
+    <button type="button" (click)="loadMore()">Load more</button>
+  </div>
+</div>

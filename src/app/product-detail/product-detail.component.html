@@ -1,0 +1,78 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<div>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>
+        Camp CPC in €:
+        <input 
+          type="number" 
+          formControlName="camp_cpc" 
+          min="0" 
+          step="any" 
+          required 
+        />
+      </label>
+      <div class="error-warning" *ngIf="formControls.camp_cpc.errors">Please specify campaign cpc ...</div>
+    </div>
+    <div>
+      <label>
+        Date:
+        <input 
+          type="date"
+          formControlName="date"
+          required 
+        />
+      </label>
+      <div class="error-warning" *ngIf="formControls.date.errors">Please specify valid date ...</div>
+    </div>
+    <div>
+      <label>
+        Time:
+        <input 
+          type="time" 
+          formControlName="time"
+          required 
+        />
+      </label>
+      <div class="error-warning" *ngIf="formControls.time.errors">Please specify time ...</div>
+    </div>
+    <div>
+      <label>
+        Freeclick:
+        <input 
+          type="checkbox" 
+          formControlName="freeclick" 
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Network:
+        <input type="radio" value="a" formControlName="network" />
+        <input type="radio" value="b" formControlName="network" />
+        <input type="radio" value="c" formControlName="network" />
+      </label>
+    </div>
+    <div>
+      <label>
+        PlistaProduct:
+        <select formControlName="PlistaProduct">
+          <option value="Product 1">Product 1</option>
+          <option value="Product 2">Product 2</option>
+          <option value="Product 3">Product 3</option>
+          <option value="Product 4">Product 4</option>
+          <option value="Product 5">Product 5</option>
+          <option value="Product 6">Product 6</option>
+          <option value="Product 7">Product 7</option>
+          <option value="Product 8">Product 8</option>
+          <option value="Product 9">Product 9</option>
+        </select>
+      </label>
+    </div>
+    
+    <button type="submit" [disabled]="!productForm.valid">Save</button>
+  </form>
+  <a routerLink="/products">Return to table</a>
+</div>
+
+

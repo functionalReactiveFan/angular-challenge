@@ -1,0 +1,31 @@
+.table-container {
+    overflow-x: scroll;
+}
+
+.table {
+    min-width: 100%;
+}
+
+th, td {
+    text-align: center;
+    min-width: 150px;
+    max-width: 150px;
+}
+
+.sticky {
+    display: table;
+    background-color: white;
+}
+
+.product-row {
+    cursor: pointer;
+}
+
+.product-row:hover {
+    background-color: #d7d7d7;
+}
+
+.load-more {
+    display: flex;
+    justify-content: center;
+}
