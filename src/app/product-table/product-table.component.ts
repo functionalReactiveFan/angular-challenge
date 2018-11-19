@@ -36,7 +36,7 @@ export class ProductTableComponent {
       this.hasMoreProducts = data.hasMore;
 
       if (this.hasMoreProducts) {
-        this.offset += 10;
+        this.offset += this.limit;
       }
     });
   }
