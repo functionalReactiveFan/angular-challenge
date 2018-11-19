@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
 import { ProductService } from '../product.service';
@@ -9,11 +9,11 @@ import { Product } from '../models';
   templateUrl: './product-table.component.html',
   styleUrls: ['./product-table.component.css']
 })
-export class ProductTableComponent {
+export class ProductTableComponent implements OnInit {
   public products: Product[] = [];
-  public isLoading: boolean = false;
-  private offset: number = 0;
-  private limit: number = 10;
+  public isLoading = false;
+  private offset = 0;
+  private limit = 10;
   private hasMoreProducts = true;
 
   constructor(

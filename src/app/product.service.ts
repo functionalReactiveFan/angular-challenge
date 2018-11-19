@@ -37,7 +37,7 @@ export class ProductService {
 
   public getProductById(id: string): Observable<Product> {
     this.products = this.products || products;
-    const product = this.products.find((product: Product) => product.userid === id);
+    const product = this.products.find((_product: Product) => _product.userid === id);
     
     // return timer(1500).pipe(
     //   flatMap(() => of(product)),
@@ -47,8 +47,8 @@ export class ProductService {
 
   public update(id: string, data: {}): Observable<boolean> {
     this.products = this.products || products;
-    let product = this.products.find((product: Product) => product.userid === id);
-    let index = this.products.findIndex((product: Product) => product.userid === id);
+    const product = this.products.find((_product: Product) => _product.userid === id);
+    const index = this.products.findIndex((_product: Product) => _product.userid === id);
     
     if (!product || index === -1) {
       return timer(1500).pipe(

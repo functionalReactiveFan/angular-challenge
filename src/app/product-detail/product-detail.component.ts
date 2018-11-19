@@ -14,7 +14,7 @@ import { Product } from '../models';
 export class ProductDetailComponent implements OnInit {
   public product: undefined | Product;
   public productForm: undefined | FormGroup; // todo: cannot be undefined!
-  public isLoading: boolean = false;
+  public isLoading = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,9 +24,10 @@ export class ProductDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.isLoading = true;
-    
     const id = this.route.snapshot.paramMap.get('id');
+    
+    this.isLoading = true;
+        
     this.productService.getProductById(id).pipe(take(1)).subscribe((product: Product) => {
       this.isLoading = false;
       this.product = product;

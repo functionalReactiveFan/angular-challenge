@@ -4,10 +4,10 @@ import { ProductTableComponent } from '../app/product-table/product-table.compon
 import { ProductDetailComponent } from '../app/product-detail/product-detail.component';
 
 const routes: Routes = [
-  { 
-    path: '', 
-    redirectTo: '/products', 
-    pathMatch: 'full' 
+  {
+    path: '',
+    redirectTo: '/products',
+    pathMatch: 'full',
   },
   {
     path: 'products',
