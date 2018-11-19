@@ -17,7 +17,7 @@ export class ProductService {
     let _products = this.products;
     
     if (config && config.offset) {
-      _products = this.products.slice(config.offset);
+      _products = _products.slice(config.offset);
     }
 
     if (config && config.limit) {
